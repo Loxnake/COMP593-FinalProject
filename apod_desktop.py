@@ -20,9 +20,16 @@ from sys import argv, exit
 from datetime import datetime, date
 from hashlib import sha256
 from os import path
-
+from library import download_image_from_url, set_desktop_background_image
+import ctypes
+import requests
 def main():
 
+    
+
+
+
+    
     # Determine the paths where files are stored
     image_dir_path = get_image_dir_path()
     db_path = path.join(image_dir_path, 'apod_images.db')
@@ -54,7 +61,7 @@ def main():
     # Set the desktop background image to the selected APOD
     set_desktop_background_image(image_path)
 
-def get_image_dir_path():
+def get_image_dir_path():#complete
     """
     Validates the command line parameter that specifies the path
     in which all downloaded images are saved locally.
@@ -73,7 +80,7 @@ def get_image_dir_path():
         print('Error: Missing path parameter.')
         exit('Script execution aborted')
 
-def get_apod_date():
+def get_apod_date():#complete
     """
     Validates the command line parameter that specifies the APOD date.
     Aborts script execution if date format is invalid.
@@ -97,7 +104,7 @@ def get_apod_date():
     print("APOD date:", apod_date)
     return apod_date
 
-def get_image_path(image_url, dir_path):
+def get_image_path(image_url, dir_path):#TODO
     """
     Determines the path at which an image downloaded from
     a specified URL is saved locally.
@@ -106,9 +113,11 @@ def get_image_path(image_url, dir_path):
     :param dir_path: Path of directory in which image is saved locally
     :returns: Path at which image is saved locally
     """
+    
+    
     return "TODO"
 
-def get_apod_info(date):
+def get_apod_info(date):#complete?
     """
     Gets information from the NASA API for the Astronomy 
     Picture of the Day (APOD) from a specified date.
@@ -116,7 +125,21 @@ def get_apod_info(date):
     :param date: APOD date formatted as YYYY-MM-DD
     :returns: Dictionary of APOD info
     """    
-    return {"todo" : "TODO"}
+    key = 'api_key=wDf3aHj9BCIidi5sDNEUyKuT9GFCTgxYH69gjpsV'#user's key
+    dateparam = 'date=' + date
+    getstring = ('https://api.nasa.gov/planetary/apod?' + key)
+    response = requests.get(getstring)
+
+    print('Getting NASA\'s APOD Information...', end = '')
+    
+    if response.status_code == 200:
+     print('Success!')
+     return response.json()
+    else:
+     print('Failed, Response code:',response.status_code)
+     
+
+    
 
 def print_apod_info(image_url, image_path, image_size, image_sha256):
     """
@@ -182,13 +205,13 @@ def image_already_in_db(db_path, image_sha256):
     """ 
     return True #TODO
 
-def set_desktop_background_image(image_path):
+def set_desktop_background_image(image_path):#complete
     """
     Changes the desktop wallpaper to a specific image.
 
     :param image_path: Path of image file
     :returns: None
     """
-    return #TODO
+    ctypes.windll.user32.SystemParametersInfoW(20, 0, image_path, 0)
 
 main()
