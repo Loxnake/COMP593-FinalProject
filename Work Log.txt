@@ -1,0 +1,43 @@
+I didn't reaize I needed a work log until april 25 @ 4:40pm 
+
+stuff completed before april 25 @4:40pm:
+    -kinda half ass read the assigment like 3 times
+    -made the photo file and jsut in general set everything up in github desktop and VS code for the program to work
+    -completed the function to get the info of the APOD and put it into a dictionary
+    -I think that's it
+    -oh and made a launch.json to use CLI params
+
+stuff completed april 25 @4:42pm
+    -saw that I was supposed to make a work log
+    -started working to try to finish the API section of the project then will go play videogames
+
+stuff completed april 25 @5:57pm 
+    -finished all the api stuff and got the size of the image, path, all the cool stuff, all that's left is making the database
+    -kinda hungry but probably going to make the database before I go eat
+
+stuff completed april 25 @6:05pm
+    -looked through my old database labs on github to figure out how to make a .database
+    -wrote a single line of code bc apparently that's all it takes
+    -might look into adding images to the db now
+
+stuff completed april 25 @6:28pm
+    -a single line of code was not all that was needed, I added the "images" table
+    -now I'm going to eat.
+
+stuff completed april 25 @8:02pm
+    -got back from dinner
+    -finished add_image_to_db
+
+stuff completed april 25 @8:48pm
+    -finished but encountered a bug trying to make video thumbnail titles readable("Animation: odd radio circles" would save as "Animation",
+     I think because the ":" was messing with python dictionaries)
+     - upon further reflection it was becuase I needed to replace the spaces in the title with underscores for it to work properly,
+     otherwise it breaks the path
+
+stuff completed april 25 @9:27pm
+    -finally squashed the bug, I kept passing in the video url and trying to make it into a jpg instead of usin the thumnail_url,
+    but, we got there
+    -going to get a mcflurry now, will hand this in when I get back, I deserve this.
+    -hopefully this work log was detailed enough idrk what I was supposed to desktop
+    -I decided I needed to grind out this whole project in like one day, I also did my final lab in cyber law today, going to do some
+     networks after this too

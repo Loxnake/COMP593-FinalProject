@@ -11,7 +11,7 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true
-            "args" : ["C:\\Fleming\\GitHub Repositroies\\COMP593-FinalProject\\images"]
+            "args" : ["C:\\Fleming\\GitHub Repositroies\\COMP593-FinalProject\\images", "2022-03-30"]
         }
     ]
 }
